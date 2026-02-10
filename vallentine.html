@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Proposal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6e6;
+            padding: 50px;
+        }
+        h1 {
+            color: #d63384;
+            font-size: 2em;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        #yesBtn {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #noBtn {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Would you be my Valentine?</h1>
+    <button id="yesBtn">Yes</button>
+    <button id="noBtn">No</button>
+
+    <script>
+        let yesSize = 1; // Initial scale for Yes button
+
+        document.getElementById('noBtn').addEventListener('click', function() {
+            yesSize += 0.2; // Increase size by 20% each time No is clicked
+            document.getElementById('yesBtn').style.transform = `scale(${yesSize})`;
+        });
+
+        document.getElementById('yesBtn').addEventListener('click', function() {
+            // Redirect to next page (replace with your desired URL)
+            window.location.href = '2.html'; // Change this to your next page URL
+        });
+    </script>
+</body>
+</html>
