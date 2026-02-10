@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Proposal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6e6;
+            padding: 50px;
+            color: #d63384;
+        }
+        h1 {
+            font-size: 2em;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        #yesBtn {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #noBtn {
+            background-color: #f44336;
+            color: white;
+        }
+        .hidden {
+            display: none;
+        }
+        .heart {
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div id="proposalPage">
+        <h1>Would you be my Valentine?</h1>
+        <button id="yesBtn">Yes</button>
+        <button id="noBtn">No</button>
+    </div>
+
+    <div id="successPage" class="hidden">
+        <h1>Yay! You said Yes!</h1>
+        <p>Happy Valentine's Day, my love! 💖</p>
+        <p>I'm so happy you're my Valentine. Let's make this day special!</p> <!-- Ganti dengan URL gambar hati asli jika ada -->
+    </div>
+
+    <script>
+        let yesSize = 1; // Initial scale for Yes button
+
+        document.getElementById('noBtn').addEventListener('click', function() {
+            yesSize += 0.2; // Increase size by 20% each time No is clicked
+            document.getElementById('yesBtn').style.transform = `scale(${yesSize})`;
+        });
+
+        document.getElementById('yesBtn').addEventListener('click', function() {
+            // Hide proposal page and show success page
+            document.getElementById('proposalPage').classList.add('hidden');
+            document.getElementById('successPage').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
